@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Add Planet</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+</head>
+<body >
+<h1 th:align="center">New patient:</h1>
+
+
+
+<form th:action="@{/patient}"
+      th:object="${patientForm}" th:align="center" method="POST">
+    Name:
+    <input type="text" th:field="*{name}" />
+    <br/>
+    <input type="submit" value="Submit" />
+</form>
+
+<br/>
+
+<!-- Check if errorMessage is not null and not empty -->
+
+<div th:if="${errorMessage}" th:utext="${errorMessage}" th:align="center"
+     style="color:orangered;font-style:italic;">
+    ...
+</div>
+<div th:if="${errorPlanetExist}" th:utext="${errorPlanetExist}" th:align="center"
+     style="color:orangered;font-style:italic;">
+    ...
+</div>
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Тег SELECT, атрибут name</title>
+    <script>
+        function dataSelect(f) {
+            n = f.hero.selectedIndex
+            if(n) alert("Выбран герой: " + f.hero.options[n].value)
+        }
+    </script>
+</head>
+<body>
+
+<form action="handler.php">
+    <p><select name="hero">
+        <option>Выберите героя</option>
+        <option value="Чебурашка">Чебурашка</option>
+        <option value="Крокодил Гена">Крокодил Гена</option>
+        <option value="Шапокляк">Шапокляк</option>
+        <option value="Крыса Лариса">Крыса Лариса</option>
+    </select>
+        <input type="button" value="OK" onClick="dataSelect(this.form)"></p>
+</form>
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title th:align="center">Welcome</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+</head>
+<body>
+<form th:action="@{/addLord}"
+      th:object="${doctorForm}" th:align="center" method="POST">
+<select name="user_city">
+    <optgroup label="Россия">
+        <option value="1">Москва</option>
+        <option value="2">Санкт-Петербург</option>
+        <option value="3">Новосибирск</option>
+    </optgroup>
+    <optgroup label="Украина">
+        <option value="4">Киев</option>
+        <option value="5">Харьков</option>
+        <option value="6">Львов</option>
+    </optgroup>
+    <optgroup label="Беларусь">
+        <option value="7">Минск</option>
+        <option value="8">Бобруйск</option>
+        <option value="9">Гомель</option>
+    </optgroup>
+</select>
+<input type = "submit" value = "Ответить">
+</form>
+<!--
+
+   In Thymeleaf the equivalent of
+   JSP's ${pageContext.request.contextPath}/edit.html
+   would be @{/edit.html}
+
+   -->
+
+
+</body>
+
+</html>
