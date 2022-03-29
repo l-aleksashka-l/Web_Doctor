@@ -1,32 +1,31 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8"/>
     <title>Add Lord</title>
     <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
     <link rel="stylesheet" type="text/css" th:href="@{/css/num.css}"/>
     <link rel="stylesheet" type="text/css" th:href="@{/css/RButt.css}"/>
-</head>
-<body >
-<h1 th:align="center">Diagnostics <span th:text="*{name}"></span>:</h1>
 
+</head>
+<body>
+<h1 th:align="center">Diagnostics <span th:text="*{name}"></span>:</h1>
 
 
 <form th:action="@{/desiase}"
       th:object="${desiaseForm}" th:align="center" method="POST">
     Desiase:
     <select name="user_city" th:field="*{diagnosis}" required>
-    <optgroup label="Stomatology">
-        <option value="73.010 Sinusitis">Sinusitis</option>
-        <option value="73.020 Cists">Cists</option>
-        <option value="73.030 Neoplasms of the oral cavity">Neoplasms of the oral cavity</option>
-        <option value="73.040 Face skeleton">Face skeleton</option>
-        <option value="73.050 Spittle">Spittle</option>
-        <option value="73.060 Plasms of the oral cavity">Plasms of the oral cavity</option>
-    </optgroup>
+        <optgroup label="Oftalmolog">
+            <option value="67.010 Eye apple ache">Eye apple ache</option>
+            <option value="67.020 Retinal tear">Retinal tear</option>
+            <option value="67.030 Cists">Cists</option>
+            <option value="67.040 Other">Other</option>
+            <option value="67.050 Rainbow ache">Rainbow ache</option>
+            <option value="67.060 Occlusion">Occlusion</option>
+        </optgroup>
     </select>
-
-    <br>
+<br>
     <div class="form_radio_btn">
         <input id="radio-1" type="radio" name="radio" value="TRUE" th:field="*{status}" checked>
         <label for="radio-1">TRUE</label>
@@ -56,18 +55,21 @@
 
         </tr>
         </thead>
-        <tbody ><tr th:each ="desiase : ${tempPerson}" >
+        <tbody>
+        <tr th:each="desiase : ${tempPerson}">
             <td th:utext="${desiase.type}">...</td>
             <td th:utext="${desiase.login_doctor}">...</td>
             <td th:utext="${desiase.diagnosis}">...</td>
             <td th:utext="${desiase.status}">...</td>
             <td th:utext="${desiase.date}">...</td>
 
-        </tr></tbody>
+        </tr>
+        </tbody>
 
     </table>
 </div>
 <br/>
+
 <ul th:align="center">
     <a th:href="*{link}" th:align="center">Back</a>
 </ul>
@@ -76,10 +78,12 @@
 <div th:if="${errorMessage}" th:utext="${errorMessage}" th:align="center"
      style="color:red;font-style:italic;">
     ...
-</div><div th:if="${errorBadMessage}" th:utext="${errorBadMessage}" th:align="center"
+</div>
+<div th:if="${errorBadMessage}" th:utext="${errorBadMessage}" th:align="center"
      style="color:red;font-style:italic;">
     ...
-</div><div th:if="${errorNothingLordMessage}" th:utext="${errorNothingLordMessage}" th:align="center"
+</div>
+<div th:if="${errorNothingLordMessage}" th:utext="${errorNothingLordMessage}" th:align="center"
      style="color:red;font-style:italic;">
     ...
 </div>

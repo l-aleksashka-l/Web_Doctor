@@ -6,6 +6,7 @@
     <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
     <link rel="stylesheet" type="text/css" th:href="@{/css/num.css}"/>
     <link rel="stylesheet" type="text/css" th:href="@{/css/RButt.css}"/>
+
 </head>
 <body >
 <h1 th:align="center">Diagnostics <span th:text="*{name}"></span>:</h1>
@@ -16,14 +17,16 @@
       th:object="${desiaseForm}" th:align="center" method="POST">
     Desiase:
     <select name="user_city" th:field="*{diagnosis}" required>
-    <optgroup label="Stomatology">
-        <option value="73.010 Sinusitis">Sinusitis</option>
-        <option value="73.020 Cists">Cists</option>
-        <option value="73.030 Neoplasms of the oral cavity">Neoplasms of the oral cavity</option>
-        <option value="73.040 Face skeleton">Face skeleton</option>
-        <option value="73.050 Spittle">Spittle</option>
-        <option value="73.060 Plasms of the oral cavity">Plasms of the oral cavity</option>
-    </optgroup>
+        <optgroup label="Surgeon">
+            <option value="72.010 Trombos">Trombos</option>
+            <option value="72.020 Takayasu">Takayasu</option>
+            <option value="72.030 Sindrom Reino">Sindrom Reino</option>
+            <option value="72.040 Artheriotelscopy">Artheriotelscopy</option>
+            <option value="72.050 Aorta ache">Aorta ache</option>
+            <option value="72.060 Bad trombos">Bad trombos</option>
+            <option value="72.070 Trombosolia">Trombosolia</option>
+            <option value="72.080 Blood problems">Blood problems</option>
+        </optgroup>
     </select>
 
     <br>
@@ -42,8 +45,7 @@
         <label for="radio-3">?</label>
     </div>
     <br>
-    <input type="submit" value="SEND"/>
-</form>
+    <input type="submit" value="SEND"/></form>
 <div th:align="center">
     <table class="table" border="1" cellpadding="0">
         <thead>
@@ -68,6 +70,7 @@
     </table>
 </div>
 <br/>
+
 <ul th:align="center">
     <a th:href="*{link}" th:align="center">Back</a>
 </ul>
@@ -77,10 +80,10 @@
      style="color:red;font-style:italic;">
     ...
 </div><div th:if="${errorBadMessage}" th:utext="${errorBadMessage}" th:align="center"
-     style="color:red;font-style:italic;">
+           style="color:red;font-style:italic;">
     ...
 </div><div th:if="${errorNothingLordMessage}" th:utext="${errorNothingLordMessage}" th:align="center"
-     style="color:red;font-style:italic;">
+           style="color:red;font-style:italic;">
     ...
 </div>
 
