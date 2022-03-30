@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <link rel="stylesheet" href="/css/patient_styles.css">
+
+    <title>Add diseases</title>
+</head>
+<body>
+<div class="bg-image"></div>
+
+<div class="all-content-patient">
+    <div class="left-side-content">
+        <!--Past username var here instead of "Slava"-->
+        <div class="patient-name">Diagnostics <span th:text="*{name}"/></div>
+        <form th:action="@{/desiase}"
+              th:object="${desiaseForm}" method="POST">
+            <div class="select_field">
+                <label for="type">Disease:</label>
+                <div class="box">
+                    <select name="user_city" th:field="*{diagnosis}" required>
+                        <optgroup label="Stomatology">
+                            <option value="73.010 Sinusitis">Sinusitis</option>
+                            <option value="73.020 Cists">Cists</option>
+                            <option value="73.030 Neoplasms of the oral cavity">Neoplasms of the oral cavity</option>
+                            <option value="73.040 Face skeleton">Face skeleton</option>
+                            <option value="73.050 Spittle">Spittle</option>
+                            <option value="73.060 Plasms of the oral cavity">Plasms of the oral cavity</option>
+                        </optgroup>
+                        </select>
+                </div>
+            </div>
+            <br>
+            <div class="radio_btns_group">
+                <div class="form_radio_btn">
+                    <input id="radio-true" type="radio" name="radio1" value="TRUE" th:field="*{status}" checked>
+                    <label for="radio-true">True</label>
+                </div>
+                <div class="form_radio_btn">
+                    <input id="radio-false" type="radio" name="radio1" value="FALSE" th:field="*{status}">
+                    <label for="radio-false">False</label>
+                </div>
+                <div class="form_radio_btn">
+                    <input id="radio-null" type="radio" name="radio1" value="?" th:field="*{status}">
+                    <label for="radio-null">?</label>
+                </div>
+            </div>
+            <button type="submit">Submit</button>
+            </form>
+        <a th:href="*{link}">
+            <button type=" button" class="back-btn">BACK</button>
+        </a>
+        </div>
+
+    <form th:action="@{/desiase}"
+          th:object="${desiaseForm}" method="POST">
+            <!--Responsive table approach-->
+            <table class="table">
+                <thead>
+                <th>Doctor</th>
+                <th>Name</th>
+                <th>Diagnosis</th>
+                <th>Status</th>
+                <th>Date</th>
+                </thead>
+                <tbody>
+                <!--Just some test data, replace it with your vars-->
+                <tr th:each="desiase : ${tempPerson}">
+                    <td th:utext="${desiase.type}">...</td>
+                    <td th:utext="${desiase.login_doctor}">...</td>
+                    <td th:utext="${desiase.diagnosis}">...</td>
+                    <td th:utext="${desiase.status}">...</td>
+                    <td th:utext="${desiase.date}">...</td>
+                </tbody>
+            </table>
+        </form>
+
+    </div>
+</div>
+</body>
+</html>

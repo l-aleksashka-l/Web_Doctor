@@ -1,0 +1,316 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.bg-image {
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 1;
+
+    /* The image used */
+    background-image: url("/images/add_patient_image.jpg");
+
+    /* Add the blur effect */
+    filter: blur(2px);
+
+    /* Full height */
+    height: 100%;
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.all-content-patient {
+    position: fixed;
+    left: 0;
+    right: 0;
+
+    font-family: 'Montserrat';
+
+    height: 100%;
+    width: 100%;
+
+    z-index: 9999;
+}
+
+/*Main login form content*/
+.main-content {
+    position: absolute;
+    left: 50%;
+    top: 30%;
+    transform: translate(-50%, -50%);
+    width: 800px;
+    /* min-height: 100px; */
+    /* text-align: center; */
+
+    background: none;
+    /* background: rgb(226, 226, 226); */
+    border: 5px solid white;
+    box-shadow: 0 0 7px black;
+    border-radius: 10px;
+}
+
+form .txt_field {
+    position: relative;
+    top: 30px;
+    left: 20px;
+}
+
+/*Add patient label*/
+.txt_field label {
+    position: relative;
+    margin: 30px 0px 0px 0px;
+    font-size: 30px;
+    color: rgb(59, 59, 59);
+}
+
+.txt_field input[type="text"] {
+    font-size: 30px;
+    color: rgb(65, 65, 65);
+    background: rgba(255, 255, 255, 0.5);
+    border: 1px solid white;
+    border-bottom: 1px solid rgb(59, 59, 59);
+    border-left: 1px solid rgb(59, 59, 59);
+    margin-left: 10%;
+    height: 50px;
+    width: 50%;
+}
+
+.txt_field input[type="text"]:hover {
+    outline: 3px solid rgba(150, 151, 226, 0.5);
+}
+
+.txt_field span::before {
+    content: '';
+    position: absolute;
+    top: 55px;
+    left: 34%;
+    width: 0%;
+    height: 2px;
+    background: #2691d9;
+    transition: .6s;
+}
+
+.txt_field input:focus ~ span::before,
+.txt_field input:valid ~ span::before {
+    width: 50%;
+}
+
+button[type="submit"] {
+    position: relative;
+    margin: 20% 0 50px 0;
+    left: 5%;
+    width: 27%;
+    height: 55px;
+    background: #ffffff;
+    border: 1px solid;
+    border-radius: 10px;
+    font-size: 18px;
+    color: #5c5c5c;
+    font-weight: 700;
+    cursor: pointer;
+    outline: none;
+}
+
+button[type="submit"]:hover {
+    border: 7px solid;
+    border-color: #9bc9e7;
+    font-size: 22px;
+    transition: .6s;
+}
+
+/* Page 3. Add diseases styls part -----------------------*/
+
+.left-side-content {
+    width: 50%;
+    float: left;
+    /* background: #9bc9e7; */
+}
+
+.left-side-content form {
+    position: relative;
+    /* background: #f5f5f5; */
+}
+
+.table {
+    width: 50%;
+    float: right;
+    font-family: sans-serif;
+    border-collapse: collapse;
+    background: white;
+}
+
+.table td, .table th {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    text-align: center;
+    font-size: 16px;
+}
+
+.table th {
+    background-color: darkblue;
+    color: #ffffff;
+}
+
+.table tbody tr:nth-child(even) {
+    background-color: #f5f5f5;
+}
+
+/*responsive*/
+
+@media(max-width: 500px) {
+    .table thead {
+        display: none;
+    }
+
+    .table, .table tbody, .table tr, .table td {
+        display: block;
+        width: 85%;
+    }
+
+    .table tr {
+        margin-bottom: 15px;
+    }
+
+    .table td {
+        position: relative;
+        text-align: right;
+        padding-left: 50%;
+    }
+
+    .table td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 0;
+        width: 50%;
+        padding-left: 15px;
+        font-size: 15px;
+        font-weight: bold;
+        text-align: left;
+    }
+}
+
+.patient-name {
+    position: relative;
+    top: 20px;
+    left: 25px;
+    width: 55%;
+    font-size: 30px;
+    font-weight: bold;
+    font-family: sans-serif;
+    border: 1px solid rgb(255, 255, 255);
+    padding: 15px;
+    margin-bottom: 80px;
+    border-radius: 5px;
+    background-color: rgb(255, 255, 255);
+}
+
+.back-btn {
+    width: 200px;
+    height: 50px;
+    background: #2691d9;
+    border: 1px solid;
+    border-radius: 15px;
+    font-size: 18px;
+    color: #e4f4fb;
+    font-weight: 700;
+    cursor: pointer;
+    outline: none;
+    position: fixed;
+    left: 20px;
+    bottom: 30px;
+}
+
+.back-btn:hover {
+    border: 7px solid;
+    font-size: 22px;
+    border-color: #9bc9e7;
+    transition: .6s;
+}
+
+.select_field {
+    position: relative;
+    left: 30px;
+    box-sizing: border-box;
+    width: 60%;
+    margin: 0px 0px 10px 30px;
+}
+
+/*Type label*/
+.select_field label {
+    position: relative;
+    font-weight: bold;
+    left: -25px;
+    top: 12px;
+    font-size: 20px;
+}
+
+.box {
+    position: relative;
+    left: -75px;
+    float: right;
+}
+
+.box select {
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    padding: 12px;
+    margin-top: 0;
+    width: 200px;
+    border: none;
+    font-size: 16px;
+    /* box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2); */
+    border: 1px solid silver;
+    -webkit-appearance: button;
+    appearance: button;
+    outline: none;
+}
+
+.box select option {
+    padding: 30px;
+}
+
+.radio_btns_group {
+    position: relative;
+    left: 35px;
+    top: 15px;
+}
+
+.form_radio_btn {
+    display: inline-block;
+    margin-right: 10px;
+}
+.form_radio_btn input[type=radio] {
+    display: none;
+}
+.form_radio_btn label {
+    display: inline-block;
+    cursor: pointer;
+    padding: 0px 15px;
+    line-height: 34px;
+    border: 1px solid #999;
+    border-radius: 6px;
+    user-select: none;
+}
+
+/* Checked */
+.form_radio_btn input[type=radio]:checked + label {
+    background: #ffe0a6;
+}
+
+/* Hover */
+.form_radio_btn label:hover {
+    color: #666;
+}
+
+/* Disabled */
+.form_radio_btn input[type=radio]:disabled + label {
+    background: #efefef;
+    color: #666;
+}

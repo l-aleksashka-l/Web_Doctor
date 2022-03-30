@@ -65,7 +65,7 @@ public class DoctorController {
         DoctorForm doctorForm = new DoctorForm();
         model.addAttribute("doctorForm", doctorForm);
 
-        return "doctor";
+        return "login";
     }
 
 
@@ -92,19 +92,19 @@ public class DoctorController {
                         return "redirect:/" + login_doctor + "/" + type_doctor + "/patient";//след страница
                     }
                     model.addAttribute("errorLordExist", errorLordExist);
-                    return "doctor";
+                    return "login";
 
                 }
 
             }
             model.addAttribute("errorNumberMessage", errorNumberMessage);
-            return "doctor";
+            return "login";
 
 
         }
 
         model.addAttribute("errorMessage", errorMessage);
-        return "doctor";
+        return "login";
     }
 
 
@@ -142,7 +142,7 @@ public class DoctorController {
         PatientForm patientForm = new PatientForm();
         model.addAttribute("patientForm", patientForm);
 
-        return "patient";
+        return "add_patient";
     }
 
 
@@ -168,11 +168,11 @@ public class DoctorController {
         model.addAttribute("tempPerson", tempPersons);
         model.addAttribute("link", "http://localhost:4001/" + login_doctor + "/" + type_doctor + "/patient");
         if(type_doctor.equals("Stomatolog"))
-            return "desiase";
+            return "add_diseases";
         else if(type_doctor.equals("Oftalmolog"))
-            return "ofta";
+            return "add_ofta";
         else
-            return "surge";
+            return "add_surge";
     }
 
 
@@ -200,7 +200,7 @@ public class DoctorController {
 
         }
         model.addAttribute("errorMessage", errorMessage);
-        return "desiase";
+        return "add_disiases";
     }
 }
 

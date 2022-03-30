@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <link rel="stylesheet" href="/css/patient_styles.css">
+
+    <title>Add patient</title>
+</head>
+<body>
+    <div class="bg-image"></div>
+
+    <div class="all-content-patient">
+        <div class="main-content">
+            <form th:action="@{/patient}"
+                  th:object="${patientForm}" method="POST">
+                <div class="txt_field">
+                    <label for="uname"><b>Add patient:</b></label>
+                    <input type="text" th:field="*{name}" />
+                    <span></span>
+                </div>
+                <button type="submit" value="SEND">SEND<button/>
+                    <a href="http://localhost:4001/doctor">
+                    <button type="button" class="back-btn">LOG OUT</button>
+                </a>
+            </form>
+
+        </div>
+    </div>
+
+</body>
+</html>

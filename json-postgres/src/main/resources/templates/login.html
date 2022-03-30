@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <link rel="stylesheet" type="text/css" media="all"
+          href="/css/styles.css" th:href="@{/css/styles.css}"/>
+
+
+
+    <title>Login</title>
+</head>
+
+<body>
+<div class="bg-image"></div>
+
+    <div class="all-content-registration">
+        <div class="main-content">
+            <!--Title-->
+            <h1 id="login_header">Login</h1>
+
+            <!--Main form-->
+            <form th:action="@{/doctor}"
+                  th:object="${doctorForm}" th:align="center" method="POST">
+
+                <div class="txt_field">
+                    <input type="text" name="uname" th:field="*{login}" required>
+                    <span></span>
+                    <label for="uname"><b>Username</b></label>
+                </div>
+
+                <div class="txt_field">
+                    <input type="password" name="psw" th:field="*{password}" required>
+                    <span></span>
+                    <label for="psw"><b>Password</b></label>
+                </div>
+
+                <div class="select_field">
+                    <label for="type">Doctor Type:</label>
+                    <div class="box">
+                        <select name="doc-type" th:field="*{type}">
+                            <option value="Oftalmolog">Oftalmolog</option>
+                            <option value="Stomatolog">Stomatolog</option>
+                            <option value="Surgeon">Surgeon</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button type="submit">Login</button>
+                <div class="forgot-remember">
+                    <label>
+                        <input type="checkbox" checked="checked" name="remember"> Remember me
+                    </label>
+                    <a href="#" class="pass">Forgot password?</a>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>
