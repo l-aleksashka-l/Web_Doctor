@@ -38,7 +38,7 @@
             </div>
             <br>
             <div class="radio_btns_group">
-                <div class="form_radio_btn">
+                <div class="form_radio_btn" th:align="center">
                     <input id="radio-true" type="radio" name="radio1" value="TRUE" th:field="*{status}" checked>
                     <label for="radio-true">True</label>
                 </div>
@@ -54,7 +54,7 @@
             <button type="submit">Submit</button>
             </form>
         <a th:href="*{link}">
-            <button type=" button" class="back-btn">BACK</button>
+            <button type=" button" class="back-btn" >BACK</button>
         </a>
         </div>
 

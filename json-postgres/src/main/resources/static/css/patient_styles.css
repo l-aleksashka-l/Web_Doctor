@@ -12,7 +12,7 @@ html, body {
     z-index: 1;
 
     /* The image used */
-    background-image: url("/images/add_patient_image.jpg");
+    background-image: linear-gradient(120deg, #3498db, #8e44ad);
 
     /* Add the blur effect */
     filter: blur(2px);
@@ -209,6 +209,31 @@ button[type="submit"]:hover {
     margin-bottom: 80px;
     border-radius: 5px;
     background-color: rgb(255, 255, 255);
+}
+
+.logout-btn {
+    float: right;
+    width: 200px;
+    height: 60px;
+    background: #5e69ff;
+    border: 1px solid;
+    border-radius: 15px;
+    font-size: 18px;
+    color: #e4f4fb;
+    font-weight: 700;
+    cursor: pointer;
+    outline: none;
+    position: fixed;
+    top: 211px;
+    left: 510px;
+    bottom: 30px;
+}
+
+.logout-btn:hover {
+    border: 7px solid;
+    font-size: 22px;
+    border-color: #9bc9e7;
+    transition: .6s;
 }
 
 .back-btn {
